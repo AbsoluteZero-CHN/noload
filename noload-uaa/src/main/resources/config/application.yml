@@ -14,7 +14,6 @@
 # Full reference is available at:
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
-
 management:
     endpoints:
         web:
@@ -58,6 +57,10 @@ spring:
             enabled: false
     thymeleaf:
         mode: HTML
+    liquibase:
+        enabled: false # 禁用 liquibase
+    jackson:
+        default-property-inclusion: non_empty # json 中过滤 null 值
 security:
     oauth2:
         resource:

@@ -12,11 +12,14 @@ spring:
         # Either way, it can be overridden by `--spring.profiles.active` value passed in the commandline or `-Dspring.profiles.active` set in `JAVA_OPTS`
         active: #spring.profiles.active#
     cloud:
+        inetutils:
+            preferred-networks:
+                - 10.0
         consul:
             config:
                 fail-fast: false # if not in "prod" profile, do not force to use Spring Cloud Config
                 profile-separator: "-"
             discovery:
                 tags: profile=${spring.profiles.active}, version=${info.project.version:}
-            host: localhost
+            host: 10.0.0.200
             port: 8500
