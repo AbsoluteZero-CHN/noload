@@ -40,6 +40,7 @@ public class SecurityConfiguration extends ResourceServerConfigurerAdapter {
         http
             .csrf()
             .ignoringAntMatchers("/h2-console/**")
+            .ignoringAntMatchers("/profile/**") // 配置部分
             .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
         .and()
             .addFilterBefore(corsFilter, CsrfFilter.class)

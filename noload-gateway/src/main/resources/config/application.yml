@@ -76,6 +76,8 @@ spring:
             enabled: false
     thymeleaf:
         mode: HTML
+    liquibase:
+        enabled: false # 禁用 liquibase
 security:
     oauth2:
         resource:
