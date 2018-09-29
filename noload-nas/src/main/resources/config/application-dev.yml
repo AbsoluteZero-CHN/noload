@@ -34,7 +34,7 @@ spring:
         consul:
             discovery:
                prefer-ip-address: true
-            host: localhost
+            host: 10.0.0.200
             port: 8500
     datasource:
         type: com.zaxxer.hikari.HikariDataSource

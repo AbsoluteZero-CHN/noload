@@ -15,9 +15,8 @@ spring:
         consul:
             config:
                 fail-fast: false # if not in "prod" profile, do not force to use Spring Cloud Config
-                format: yaml
                 profile-separator: "-"
             discovery:
                 tags: profile=${spring.profiles.active}, version=${info.project.version:}
-            host: localhost
+            host: 10.0.0.200
             port: 8500

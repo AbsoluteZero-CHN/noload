@@ -78,6 +78,8 @@ spring:
             enabled: false
     thymeleaf:
         mode: HTML
+    liquibase:
+        enabled: false # 禁用 liquibase
 security:
     oauth2:
         resource:
@@ -136,4 +138,9 @@ jhipster:
 # https://www.jhipster.tech/common-application-properties/
 # ===================================================================
 
-# application:
+application:
+    socks-proxy:
+        host: 45.77.208.74
+        port: 31327
+        password: caohao
+        encryption: aes-256-cfb
