@@ -10,15 +10,13 @@ node {
     }
 
     stage('clean') {
-        sh "cd noload-uaa"
-        sh "ls"
-        sh "chmod +x mvnw"
-        sh "./mvnw clean"
+        sh "cd noload-uaa && chmod +x mvnw"
+        sh "cd noload-uaa && ./mvnw clean"
     }
 
     stage('backend tests') {
         try {
-            sh "./mvnw test"
+            sh "cd noload-uaa && ./mvnw test"
         } catch(err) {
             throw err
         } finally {
@@ -27,7 +25,7 @@ node {
     }
 
     stage('packaging') {
-        sh "./mvnw verify -Pprod -DskipTests"
+        sh "cd noload-uaa && ./mvnw verify -Pprod -DskipTests"
         archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
     }
 }
