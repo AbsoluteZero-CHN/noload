@@ -3,7 +3,6 @@ package cn.noload.uaa.service.dto;
 import cn.noload.uaa.config.Constants;
 
 import cn.noload.uaa.domain.Authority;
-import cn.noload.uaa.domain.Module;
 import cn.noload.uaa.domain.User;
 
 import javax.validation.constraints.Email;
@@ -11,8 +10,6 @@ import javax.validation.constraints.NotBlank;
 
 import javax.validation.constraints.*;
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
