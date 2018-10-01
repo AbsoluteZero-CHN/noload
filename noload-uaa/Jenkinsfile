@@ -10,7 +10,7 @@ node {
     }
 
     stage('clean') {
-        sh "chmod +x mvnw"
+        sh "cd noload-uaa && chmod +x noload-uaa/mvnw"
         sh "./mvnw clean"
     }
 
