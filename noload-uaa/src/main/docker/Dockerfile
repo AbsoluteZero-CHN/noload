@@ -12,10 +12,7 @@ ADD entrypoint.sh entrypoint.sh
 RUN chmod 755 entrypoint.sh && chown jhipster:jhipster entrypoint.sh
 USER jhipster
 
-RUN pwd
-RUN ls
-
-ADD *.war app.war
+ADD noload-uaa/*.war noload-uaa/app.war
 
 ENTRYPOINT ["./entrypoint.sh"]
 
