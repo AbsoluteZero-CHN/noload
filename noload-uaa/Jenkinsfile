@@ -25,8 +25,8 @@ node {
     stage('build docker') {
         sh "pwd"
         sh "cd noload-uaa && cp -R src/main/docker target/"
-        sh "cd noload-uaa && cp target/*.war target/docker/"
-        dockerImage = docker.build('docker-login/uaa', 'target/docker')
+        sh "cd noload-uaa && cp target/*.war noload-uaa/target/docker/"
+        dockerImage = docker.build('docker-login/uaa', 'noload-uaa/target/docker')
     }
 
     stage('publish docker') {
