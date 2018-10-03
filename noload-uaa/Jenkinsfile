@@ -26,7 +26,7 @@ node {
         }
 
         stage('packaging') {
-            sh "cd noload-uaa && ./mvnw verify -Pprod -DskipTests"
+            sh "cd noload-uaa && ./mvnw verify -Pprod -DskipTests -Darguments=-DskipTests release:prepare release:perform"
             archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
         }
     }
