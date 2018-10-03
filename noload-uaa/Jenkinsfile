@@ -23,9 +23,9 @@ node {
 
     def dockerImage
     stage('build docker') {
-        sh "pwd"
         sh "cd noload-uaa && cp -R src/main/docker target/"
-        sh "cd noload-uaa && cp target/*.war noload-uaa/target/docker/"
+        sh "pwd"
+        sh "cd noload-uaa && cp target/*.war docker"
         dockerImage = docker.build('docker-login/uaa', 'noload-uaa/target/docker')
     }
 
