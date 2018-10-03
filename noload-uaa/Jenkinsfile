@@ -26,7 +26,7 @@ node {
         }
 
         stage('packaging') {
-            sh "cd noload-uaa && ./mvnw verify -Pprod -DskipTests -Darguments=-DskipTests release:prepare release:perform -Dmaven.test.skip=true"
+            sh "cd noload-uaa && ./mvnw verify -Pprod -DskipTests"
             archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
         }
     }
