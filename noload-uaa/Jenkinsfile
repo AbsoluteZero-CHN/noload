@@ -15,16 +15,6 @@ node {
             sh "cd noload-uaa && ./mvnw clean"
         }
 
-        stage('backend tests') {
-            try {
-                sh "cd noload-uaa && ./mvnw test"
-            } catch(err) {
-                throw err
-            } finally {
-                junit '**/target/surefire-reports/TEST-*.xml'
-            }
-        }
-
         stage('packaging') {
             sh "cd noload-uaa && ./mvnw verify -Pprod -DskipTests"
             archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
