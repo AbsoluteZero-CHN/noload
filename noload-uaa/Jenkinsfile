@@ -23,6 +23,7 @@ node {
 
     def dockerImage
     stage('build docker') {
+        sh "echo $USER"
         sh "cd noload-uaa && cp -R src/main/docker target/"
         sh "cd noload-uaa && cp target/*.war target/docker/"
         dockerImage = docker.build('docker-login/uaa', 'target/docker')
